@@ -20,6 +20,7 @@
 
 #include <sys/types.h>
 #include <stdint.h>
+#include <dlfcn.h>
 
 #ifndef FrameAddress_h
 #define FrameAddress_h
