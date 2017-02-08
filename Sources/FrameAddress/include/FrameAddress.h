@@ -21,6 +21,7 @@
 #include <sys/types.h>
 #include <stdint.h>
 #define _GNU_SOURCE
+#define __USE_GNU
 #include <dlfcn.h>
 #include <pthread.h>
 
