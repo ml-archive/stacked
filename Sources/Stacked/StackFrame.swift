@@ -18,7 +18,12 @@
 //  IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 //
 
-//import Darwin
+
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin
+#endif
 import FrameAddress
 
 /// A utility class for walking through stack frames.
