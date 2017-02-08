@@ -21,6 +21,8 @@
 #include <sys/types.h>
 #include <stdint.h>
 #include <dlfcn.h>
+#include <link.h>
+#include <pthread.h>
 
 #ifndef FrameAddress_h
 #define FrameAddress_h
