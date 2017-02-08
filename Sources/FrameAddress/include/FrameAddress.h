@@ -23,11 +23,6 @@
 #define _GNU_SOURCE
 #include <dlfcn.h>
 #include <pthread.h>
-#include <stdio.h>
-#include <stddef.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <stdint.h>
 
 #ifdef linux
     #include <link.h>

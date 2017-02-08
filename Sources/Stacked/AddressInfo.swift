@@ -24,11 +24,11 @@
     import Darwin
 #endif
 import FrameAddress
-import Foundation
+//import Foundation
 
 /// A wrapper around dl_info, used for symbolicating instruction addresses.
 public struct AddressInfo {
-    private let info: dl_info
+    private let info: Dl_info
     
     /// Address for which this struct was constructed
     public let address: UInt
@@ -45,7 +45,7 @@ public struct AddressInfo {
     /// -returns: the "image" (shared object pathname) for the instruction
     public var image: String {
         if let dli_fname = info.dli_fname, let fname = String(validatingUTF8: dli_fname), let _ = fname.range(of: "/", options: .backwards, range: nil, locale: nil) {
-            return (fname as NSString).lastPathComponent
+            return fname
         } else {
             return "???"
         }
