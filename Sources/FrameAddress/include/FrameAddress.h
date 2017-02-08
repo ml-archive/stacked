@@ -19,6 +19,7 @@
 //
 
 #include <sys/types.h>
+#include <stdint.h>
 
 #ifndef FrameAddress_h
 #define FrameAddress_h
