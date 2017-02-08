@@ -4,4 +4,5 @@ language: generic
 sudo: required
 dist: trusty
 script:
+  - cat /usr/include/dlfcn.h
   - eval "$(curl -sL https://swift.vapor.sh/ci)"
