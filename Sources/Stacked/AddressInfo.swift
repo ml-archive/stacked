@@ -18,6 +18,12 @@
 //  IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 //
 
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin
+#endif
+import FrameAddress
 import Foundation
 
 /// A wrapper around dl_info, used for symbolicating instruction addresses.
