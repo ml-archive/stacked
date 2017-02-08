@@ -20,6 +20,7 @@
 
 #include <sys/types.h>
 #include <stdint.h>
+#define _GNU_SOURCE
 #include <dlfcn.h>
 #include <pthread.h>
 #include <stdio.h>
