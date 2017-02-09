@@ -25,10 +25,6 @@
 #include <dlfcn.h>
 #include <pthread.h>
 
-#ifdef linux
-    #include <link.h>
-#endif
-
 #ifndef FrameAddress_h
 #define FrameAddress_h
 
