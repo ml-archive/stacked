@@ -1,5 +1,12 @@
 import FrameAddress
 
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin.C
+#endif
+
+
 public struct FrameAddress {
     public static func getStackTrace() -> [String] {
         var count: Int32 = 0
@@ -16,7 +23,7 @@ public struct FrameAddress {
             
             result.append(String(cString: cString))
         }
-        
+        free(cStrings)
         return result
     }
 }
