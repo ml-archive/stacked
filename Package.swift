@@ -2,8 +2,7 @@ import PackageDescription
 
 let package = Package(
     name: "Stacked",
-    targets: [
-        Target(name: "Stacked", dependencies: ["FrameAddress"]),
-        Target(name: "FrameAddress")
+    dependencies: [
+        .Package(url: "https://github.com/nodes-vapor/CFrameAddress.git", majorVersion: 0)
     ]
 )
