@@ -7,7 +7,7 @@ class StackedTests: XCTestCase {
     ]
     
     func testExample() {
-        let stacktrace = Thread.getStackTrace()
+        let stacktrace = FrameAddress.getStackTrace()
         stacktrace.forEach {
             print($0)
         }
