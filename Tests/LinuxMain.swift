@@ -1,6 +1,7 @@
 import XCTest
-@testable import stackedTests
+
+@testable import StackedTests
 
 XCTMain([
-     testCase(stackedTests.allTests),
+    testCase(StackedTests.allTests),
 ])
