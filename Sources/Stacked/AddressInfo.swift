@@ -24,7 +24,8 @@
     import Darwin
 #endif
 import FrameAddress
-//import Foundation
+import CFrameAddressLinux
+import Foundation
 
 /// A wrapper around dl_info, used for symbolicating instruction addresses.
 public struct AddressInfo {
