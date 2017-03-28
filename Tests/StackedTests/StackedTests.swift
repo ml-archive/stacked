@@ -6,8 +6,16 @@ class StackedTests: XCTestCase {
         ("testExample", testExample)
     ]
     
+    func anExample() throws -> [String] {
+        return anotherExample()
+    }
+    
+    func anotherExample() -> [String] {
+        return FrameAddress.getStackTrace()
+    }
+
     func testExample() {
-        let stacktrace = FrameAddress.getStackTrace()
+        let stacktrace = try! anExample()
         stacktrace.forEach {
             print($0)
         }
