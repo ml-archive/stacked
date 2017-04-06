@@ -15,9 +15,10 @@ import Foundation
 
 
 public struct FrameAddress {
-    public static func getStackTrace() -> [String] {
+    public static func getStackTrace(maxStackSize: Int = 32) -> [String] {
         var count: Int32 = 0
-        guard let cStrings = get_stack_trace(32, &count) else {
+        let maxStackSize = Int32(maxStackSize)
+        guard let cStrings = get_stack_trace(maxStackSize, &count) else {
             return []
         }
         
