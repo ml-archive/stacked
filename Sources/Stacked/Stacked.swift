@@ -14,28 +14,32 @@ import Foundation
 #endif
 
 
-public struct FrameAddress {
+public protocol FrameAddressType {
+    static func getStackTrace(maxStackSize: Int) -> [String]
+}
+
+public struct FrameAddress: FrameAddressType {
     public static func getStackTrace(maxStackSize: Int = 32) -> [String] {
         var count: Int32 = 0
         let maxStackSize = Int32(maxStackSize)
         guard let cStrings = get_stack_trace(maxStackSize, &count) else {
             return []
         }
-        
+
         var result: [String] = []
-        
+
         for i in 0..<Int(count) {
             guard let cString = cStrings[i] else {
                 break
             }
-            
+
             var components = String(cString: cString).components(separatedBy: " ")
             for (index, component) in components.enumerated() {
                 if component.hasPrefix("_T") {
                     components[index] = _stdlib_demangleName(component)
                 }
             }
-            
+
             result.append(components.joined(separator: " "))
         }
         free(cStrings)
@@ -56,14 +60,14 @@ func _stdlib_demangleImpl(
 internal func _stdlib_demangleName(_ mangledName: String) -> String {
     return mangledName.utf8CString.withUnsafeBufferPointer {
         (mangledNameUTF8CStr) in
-        
+
         let demangledNamePtr = _stdlib_demangleImpl(
             mangledName: mangledNameUTF8CStr.baseAddress,
             mangledNameLength: UInt(mangledNameUTF8CStr.count - 1),
             outputBuffer: nil,
             outputBufferSize: nil,
             flags: 0)
-        
+
         if let demangledNamePtr = demangledNamePtr {
             let demangledName = String(cString: demangledNamePtr)
             free(demangledNamePtr)
