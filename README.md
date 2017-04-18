@@ -5,7 +5,7 @@
 [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/nodes-vapor/stacked)](http://clayallsopp.github.io/readme-score?url=https://github.com/nodes-vapor/stacked)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nodes-vapor/stacked/master/LICENSE)
 
-## Integration
+## 📦 Installation
 Update your `Package.swift` file.
 ```swift
 .Package(url: "https://github.com/nodes-vapor/stacked.git", majorVersion: 0)
