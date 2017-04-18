@@ -11,7 +11,7 @@ Update your `Package.swift` file.
 
 ## Getting started 🚀
 First remember to import the module:
-```
+```swift
 import Stacked
 ```
 
