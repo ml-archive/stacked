@@ -26,9 +26,9 @@ char ** get_symbols_for_backtrace(void * const *buffer, int size) {
         dladdr(buffer[i], &info[i]);
         
         char *name = "???";
-        if (info[i].dli_sname) {
+        /*if (info[i].dli_sname) {
             name = (char *)info[i].dli_sname;
-        }
+        }*/
         
         result[i] = strdup(name);
     }
