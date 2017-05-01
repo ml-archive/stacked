@@ -32,7 +32,8 @@ public struct FrameAddress: FrameAddressType {
                     string = demangledString
                 }
             }
-
+            
+            free(cString)
             result.append(string)
         }
         
