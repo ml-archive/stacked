@@ -39,7 +39,7 @@ char ** get_symbols_for_backtrace(void * const *buffer, int size) {
         strs += snprintf((char *) strs, totalBytes, "%s", info[i].dli_sname) + 1;
     }
     
-    free(info);
+    //free(info);
     return result;
 }
 
