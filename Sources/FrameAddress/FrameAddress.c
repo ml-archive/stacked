@@ -12,28 +12,22 @@
 char ** get_symbols_for_backtrace(void * const *buffer, int size) {
     int i;
     char ** result;
-
-    Dl_info *info = calloc(size, sizeof(Dl_info));
-    if (info == NULL) return NULL;
     
     result = malloc(sizeof(char *) * size);
-    if (result == NULL) {
-        free(info);
-        return NULL;
-    }
+    if (result == NULL) return NULL;
     
     for (i = 0; i <= size; ++i) {
-        dladdr(buffer[i], &info[i]);
+        Dl_info info;
+        dladdr(buffer[i], &info);
         
         char *name = "???";
-        if (info[i].dli_sname) {
-            name = (char *)info[i].dli_sname;
+        if (info.dli_sname) {
+            name = (char *)info.dli_sname;
         }
         
         result[i] = strdup(name);
     }
     
-    free(info);
     return result;
 }
 
