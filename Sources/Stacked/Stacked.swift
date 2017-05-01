@@ -7,13 +7,6 @@ import Foundation
     import Darwin.C
 #endif
 
-#if os(Linux)
-    import Glibc
-#else
-    import Darwin.C
-#endif
-
-
 public protocol FrameAddressType {
     static func getStackTrace(maxStackSize: Int) -> [String]
 }
@@ -33,15 +26,16 @@ public struct FrameAddress: FrameAddressType {
                 break
             }
 
-            var components = String(cString: cString).components(separatedBy: " ")
-            for (index, component) in components.enumerated() {
-                if component.hasPrefix("_T") {
-                    components[index] = _stdlib_demangleName(component)
+            var string = String(cString: cString)
+            if string.hasPrefix("_T") {
+                if let demangledString = try? demangleSwiftName(string).description {
+                    string = demangledString
                 }
             }
 
-            result.append(components.joined(separator: " "))
+            result.append(string)
         }
+        
         free(cStrings)
         return result
     }
