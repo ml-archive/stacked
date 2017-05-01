@@ -50,5 +50,3 @@ char **get_stack_trace(int buffer_size, int *result_count) {
     *result_count = backtrace(buffer, buffer_size);
     return get_symbols_for_backtrace(buffer, buffer_size);
 }
-
-
