@@ -48,7 +48,7 @@ public struct FrameAddress: FrameAddressType {
             result.append(string)
         }
         
-        free(cStrings)
+        //free(cStrings)
         return result
     }
 }
