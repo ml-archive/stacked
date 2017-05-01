@@ -4,4 +4,4 @@ language: generic
 sudo: required
 dist: trusty
 script:
-  - eval "$(curl -sL https://swift.vapor.sh/ci)"
+    - eval "$(curl -sL https://gist.githubusercontent.com/BrettRToomey/0c67d9a356deab21a52b195a24200b3d/raw/203f0026e0db464cdbe42692c71938c22246b4d8/TravisSwif31-USE_GNU_SOURCE.yml)"

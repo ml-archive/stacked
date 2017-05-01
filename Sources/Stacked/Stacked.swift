@@ -33,6 +33,11 @@ public struct FrameAddress: FrameAddressType {
                 break
             }
 
+            var string = String(cString: cString)
+            if string.hasPrefix("_T") {
+                string = _stdlib_demangleName(string)
+            }
+            
             var components = String(cString: cString).components(separatedBy: " ")
             for (index, component) in components.enumerated() {
                 if component.hasPrefix("_T") {
@@ -40,8 +45,9 @@ public struct FrameAddress: FrameAddressType {
                 }
             }
 
-            result.append(components.joined(separator: " "))
+            result.append(string)
         }
+        
         free(cStrings)
         return result
     }
