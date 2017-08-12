@@ -2,7 +2,7 @@ import PackageDescription
 
 let package = Package(
     name: "Stacked",
-    targets: [
-        Target(name: "Stacked", dependencies: ["FrameAddress"]),
+    dependencies: [
+        .Package(url: "https://github.com/nodes-vapor/cstack.git", majorVersion: 0)
     ]
 )

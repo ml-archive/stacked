@@ -1,11 +1,10 @@
-import FrameAddress
-import Foundation
-
 #if os(Linux)
-    import Glibc
+import CStackLinux
 #else
-    import Darwin.C
+import CStackMac
 #endif
+
+import Foundation
 
 public protocol FrameAddressType {
     static func getStackTrace(maxStackSize: Int) -> [String]
