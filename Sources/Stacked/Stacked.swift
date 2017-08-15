@@ -27,11 +27,10 @@ public struct FrameAddress: FrameAddressType {
 
             var string = String(cString: cString)
             if string.hasPrefix("_T") {
-                if let demangledString = try? demangleSwiftName(string).description {
-                    string = demangledString
-                }
+                string = _stdlib_demangleName(string)
             }
 
+            free(cString)
             result.append(string)
         }
         
