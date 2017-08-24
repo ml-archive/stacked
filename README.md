@@ -11,9 +11,9 @@
 
 ## 📦 Installation
 
-### Installing `CStack`
+### Installing CStack
 
-For `Stacked` to work, you first need to install the `CStack` library on the machine that is going to run your project. Please remember to do this on any machine you might deploy your project to:
+For Stacked to work, you first need to install the [CStack](https://github.com/nodes-vapor/cstack) library on the machine that is going to run your project. Please remember to do this on any machine you might deploy your project to:
 
 #### macOS and Homebrew
 
