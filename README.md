@@ -31,7 +31,7 @@ brew install cstack
 
 #### Linux and APT
 
-We're working hard on making `CStack` available on Linux (through APT) and we'll make sure to update this readme as soon as it gets ready.
+We're working hard on making CStack available on Linux (through APT) and we'll make sure to update this readme as soon as it gets ready.
 
 ### Integrating `Stacked` in your project
 
