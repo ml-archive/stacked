@@ -11,6 +11,30 @@
 
 ## 📦 Installation
 
+### Installing `CStack`
+
+For `Stacked` to work, you first need to install the `CStack` library on the machine that is going to run your project. Please remember to do this on any machine you might deploy your project to:
+
+#### macOS and Homebrew
+
+First add the tap:
+
+```
+brew tap nodes-vapor/homebrew-tap
+```
+
+And next, install the library by running:
+
+```
+brew install cstack
+```
+
+#### Linux and APT
+
+We're working hard on making `CStack` available on Linux (through APT) and we'll make sure to update this readme as soon as it gets ready.
+
+### Integrating `Stacked` in your project
+
 Update your `Package.swift` file.
 ```swift
 .Package(url: "https://github.com/nodes-vapor/stacked.git", majorVersion: 0)
