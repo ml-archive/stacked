@@ -1,9 +1,4 @@
-#if os(Linux)
-import CStackLinux
-#else
-import CStackMac
-#endif
-
+import CStack
 import Foundation
 
 public protocol FrameAddressType {
