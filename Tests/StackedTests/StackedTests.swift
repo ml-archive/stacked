@@ -15,10 +15,10 @@ class StackedTests: XCTestCase {
     }
 
     func testExample() {
+        XCTAssert(true)
         let stacktrace = try! anExample()
         stacktrace.forEach {
             print($0)
         }
-        XCTAssert(true)
     }
 }
