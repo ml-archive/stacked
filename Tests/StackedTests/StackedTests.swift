@@ -19,5 +19,6 @@ class StackedTests: XCTestCase {
         stacktrace.forEach {
             print($0)
         }
+        XCTAssert(true)
     }
 }
