@@ -9,7 +9,7 @@ jobs:
           keys:
             - v1-spm-deps-{{ checksum "Package.swift" }}
       - run:
-          name: Install CMySQL and CTLS
+          name: Install CMySQL, CTLS and CStack
           command: |
             brew tap vapor/homebrew-tap
             brew install cmysql
@@ -31,7 +31,7 @@ jobs:
             - .build
   Linux:
     docker:
-      - image: brettrtoomey/vapor-ci:0.0.1
+      - image: brettrtoomey/vapor-ci:0.0.2
     steps:
       - checkout
       - restore_cache:
