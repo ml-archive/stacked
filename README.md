@@ -16,6 +16,8 @@ For Stacked to work, you first need to install the [CStack](https://github.com/n
 
 #### macOS and Homebrew
 
+Currently the CStack library can be installed through the Vapor tap (by running `brew install cstack`). If that doesn't work for some reason or Vapor decides to remove the library from their tap, it can be installed through the Nodes tap by following these steps:
+
 First add the tap:
 
 ```
@@ -30,7 +32,17 @@ brew install cstack
 
 #### Linux and APT
 
-We're working hard on making CStack available on Linux (through APT) and we'll make sure to update this readme as soon as it gets ready.
+To install CStack on Linux using APT, you first need to setup the Vapor APT repository. The guide for this can be found [here](https://github.com/vapor/apt). After that, CStack can be installed by doing:
+
+```
+apt-get update
+```
+
+And then:
+
+```
+apt-get install cstack
+```
 
 ### Integrating `Stacked` in your project
 
@@ -39,6 +51,13 @@ Update your `Package.swift` file.
 .Package(url: "https://github.com/nodes-vapor/stacked.git", majorVersion: 0)
 ```
 
+### Exporting symbols for the stracktraces
+
+Unfortunately, we're not able to specify the needed flags for running any project wanting stacktraces through SPM, since it uses a limited set of whitelisted flags. Because of that, you would need to manually add these flags when building your project:
+
+```
+-Xlinker --export-dynamic
+```
 
 ## Getting started 🚀
 
