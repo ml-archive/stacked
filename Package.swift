@@ -9,7 +9,7 @@ let package = Package(
         .package(url: "https://github.com/nodes-vapor/cstack.git", .upToNextMajor(from: "1.0.0")),
     ],
     targets: [
-        .target(name: "Stacked", dependencies: []),
+        .target(name: "Stacked", dependencies: ["CStack"]),
         .testTarget(name: "StackedTests", dependencies: ["Stacked"]),
     ]
 )
