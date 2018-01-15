@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Stacked",
+    products: [
+        .library(name: "Stacked", targets: ["Stacked"])
+    ],
     dependencies: [
         .package(url: "https://github.com/nodes-vapor/cstack.git", .upToNextMajor(from: "1.0.0")),
     ],
